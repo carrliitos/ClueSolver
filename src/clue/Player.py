@@ -17,7 +17,7 @@ class Player:
 		self.shown = []
 
 	def hasCard(self, card):
-		sef.hasCards.add(card)
+		self.hasCards.add(card)
 		if len(self.hasCards) > self.numCards:
 			raise ImpossibleError(
 				"%s has only %s cards but has shwon %r" % 
