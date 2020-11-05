@@ -1,5 +1,5 @@
-from . import Cards
-from .Exceptions import ImpossibleError
+import Cards
+from Exceptions import ImpossibleError
 
 # Player class
 class Player:

@@ -1,5 +1,5 @@
-from . import Cards
-from .Exceptions import ImpossibleError
+import Cards
+from Exceptions import ImpossibleError
 
 # Game class
 class Game:
@@ -7,7 +7,7 @@ class Game:
 	Provide a list of players and cards.
 	Each player should be a (name, # of cards) tuple
 	'''
-	numPlayerCards = len(cards.DECK) - 3
+	numPlayerCards = len(Cards.DECK) - 3
 
 	def __init__(self, me, others):
 		self.others = others
