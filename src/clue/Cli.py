@@ -1,6 +1,6 @@
-from Cards import DECK, ROOMS, WEAPONS, PEOPLE, Triple
-from Game import Game
-from Player import Player, Me
+from clue.Cards import DECK, ROOMS, WEAPONS, PEOPLE, Triple
+from clue.Game import Game
+from clue.Player import Player, Me
 
 class CliError(Exception):
 	pass

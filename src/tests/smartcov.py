@@ -2,7 +2,7 @@ def cov_source_for_test_paths(paths):
 	'''Given test paths, return the source paths on which to measure
 	the coverage. If no specific test paths were given, measure coverage on
 	entier Python code tree.'''
-	if not in paths:
+	if not paths:
 		return ['code']
 	return [_code_path(p) for p in paths]
 

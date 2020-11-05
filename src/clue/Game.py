@@ -1,5 +1,5 @@
-import Cards
-from Exceptions import ImpossibleError
+import clue.Cards as Cards
+from clue.Exceptions import ImpossibleError
 
 # Game class
 class Game:
