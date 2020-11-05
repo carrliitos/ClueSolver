@@ -144,3 +144,9 @@ class TestParseCard:
 	def test_unknown(self):
 		with pytest.raises(Cli.UnknownCardError):
 			Cli.parseCard('foo')
+
+'''
+TODO:
+	Test to Parse Player
+	Test General Read
+'''
