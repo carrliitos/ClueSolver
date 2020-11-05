@@ -1,6 +1,6 @@
 import pytest
 
-from clue import Cards
+from src.clue import Cards
 
 class TestTriple:
 	'''The first three tests are to make sure we catch invalid triples'''

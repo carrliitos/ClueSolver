@@ -47,6 +47,16 @@ def readTriple(prompt):
 def readCards(prompt):
 	'''Query user for any non-empty list of valid cards.'''
 	while True:
+		cards = _read(prompt, required=True).split(',')
+		try:
+			return [parseCard(c) for c in cards]
+		except UnknownCardError as e:
+			print(e)
+
+def readPlayer(defaultName, defaultNumCards=3,maxCards=None):
+	'''Query user for name of a player'''
+	name = _read("Name", default=defaultName)
+	while True:
 		numCards = _read(
 			"How many cards does %s have?" % name,
 			default = defaultNumCards,
