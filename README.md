@@ -8,7 +8,8 @@ Python's ***pytest*** and ***unittest***. The main folder for the game is
 [here](./src/clue), and all the important test cases are [here](./src/tests)
 
 ## Test cases implemented
-* [Test folder](./src/tests)
-	* [Test card triples](./src/tests/test_cards.py)
-	* [Test command-line interface](./src/tests/test_cli.py) -- ***In progress***
+* [Test folder](./tests)
+	* [Test card triples](./tests/test_cards.py)
+	* [Test command-line interface](./tests/test_cli.py) -- ***In progress***
+	* [Test game functions](./tests/test_game.py)
 	* more to do...

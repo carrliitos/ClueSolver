@@ -1,4 +1,4 @@
-import clue.Cards
+import clue.Cards as Cards
 from clue.Exceptions import ImpossibleError
 
 # Player class
@@ -27,7 +27,7 @@ class Player:
 		self.asked.append(triple)
 
 	def show(self, triple):
-		if set(triple.allCards).issubet(self.notHasCards):
+		if set(triple.all_cards).issubset(self.notHasCards):
 			raise ImpossibleError(
 				"%s showed me one of %s, but earlier decline to show all those."
 				% (self.name, triple))
@@ -35,13 +35,13 @@ class Player:
 		self.shown.append(triple)
 
 	def noshow(self, triple):
-		has = self.hasCards.intersection(triple.allCards)
+		has = self.hasCards.intersection(triple.all_cards)
 		if has:
 			raise ImpossibleError(
 				"%s declined for %s, but we know they have %s"
-				% (self.name, triple.allCards, has))
+				% (self.name, triple.all_cards, has))
 
-		self.notHasCards.update(triple.allCards)
+		self.notHasCards.update(triple.all_cards)
 
 	def check(self):
 		impossible = self.hasCards.intersection(self.notHasCards)
@@ -66,7 +66,7 @@ class Me(Player):
 		myCards = set(myCards)
 		super().__init__("Me", len(myCards))
 		self.hasCards.update(myCards)
-		self.notHasCards = set(cards.DECK).difference(self.hasCards)
+		self.notHasCards = set(Cards.DECK).difference(self.hasCards)
 
 	def snapshot(self):
 		s = self.__class__(self.hasCards)
