@@ -11,19 +11,18 @@ def mock_input(request, monkeypatch):
 	if 'inputs' in request.keywords:
 		inputs = list(reversed(request.keywords['inputs'].args))
 		m.side_effect = lambda x : inputs.pop()
-
 	return m
 
 class TestReadGame:
 	'''Test class to make sure our game behaves properly'''
 	@pytest.mark.inputs(
-		'Din, Ha, Wh',
+		'Din,Ha,Wh',
 		'Obama', '4',
 		'Trump', '',
 		'Biden', '',
 		'Clinton', '',
 		'Benzon', ''
-		)
+	)
 	def test_read_game(self, mock_input):
 		g = Cli.readGame()
 
@@ -38,7 +37,7 @@ class TestReadGame:
 		'Din, Ha, Wh',
 		'Obama', '14',
 		'Trump', '2', '1' # 2 is too many, must re-enter
-		)
+	)
 	def test_too_many_cards(self, mock_input, capsys):
 		g = Cli.readGame()
 
