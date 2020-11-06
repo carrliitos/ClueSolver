@@ -12,6 +12,7 @@ Python's ***pytest*** and ***unittest***. The main folder for the game is
 	* [Test card triples](./tests/test_cards.py)
 	![Test card triples](./imgs/test_cards.png)
 	* [Test game functions](./tests/test_game.py)
+	![Test card triples](./imgs/test_game.png)
 	* [Test players functions](./tests/test_player.py)
+	![Test card triples](./imgs/test_player.png)
 	* [Test command-line interface](./tests/test_cli.py) -- ***In progress***
-	* more to do...
