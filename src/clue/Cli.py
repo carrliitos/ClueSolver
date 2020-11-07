@@ -106,7 +106,7 @@ def _parse(prefix, options, exceptionClass, optionType):
 	canonical = prefix.lower().strip()
 	candidates = [o for o in options if o.lower().startswith(canonical)]
 	if len(candidates) > 1:
-		raise exceptionClass("More than one %s matches %s.") % (optionType, prefix)
+		raise exceptionClass("More than one %s matches %s." % (optionType, prefix))
 	elif not candidates:
 		raise exceptionClass("No %s matches %s." % (optionType, prefix))
 	return candidates[0]

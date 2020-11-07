@@ -8,7 +8,8 @@ def mock_input(request, monkeypatch):
 	m = mock.Mock()
 	monkeypatch.setattr('builtins.input', m)
 	if 'inputs' in request.keywords:
-		inputs = list(reversed(request.keywords['inputs'].args))
+		# inputs = list(reversed(request.keywords['inputs'].args))
+		inputs = list(str(reversed(request.keywords['inputs'].args)))
 		m.side_effect = lambda x : inputs.pop()
 	return m
 
@@ -127,17 +128,17 @@ class TestParseCard:
 		assert Cli.parseCard('Din') == 'Dining Room'
 
 	def test_full(self):
-		assert Cli.parseCard('Green') == 'green'
+		assert Cli.parseCard('Green') == 'Green'
 
 	def test_strip(self):
-		assert Cli.parseCard('  Din ') == 'dining room'
+		assert Cli.parseCard('  Din ') == 'Dining Room'
 
 	def test_case_insensitive(self):
-		assert Cli.parseCard('Revol') == 'revolver'
+		assert Cli.parseCard('Revol') == 'Revolver'
 
 	def test_ambiguous(self):
 		with pytest.raises(Cli.UnknownCardError):
-			Cli.parseCard('b')
+			Cli.parseCard('B')
 
 	def test_unknown(self):
 		with pytest.raises(Cli.UnknownCardError):
