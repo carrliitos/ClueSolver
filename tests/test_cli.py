@@ -5,7 +5,6 @@ from clue import Cli
 
 @pytest.fixture
 def mock_input(request, monkeypatch):
-	'''Simulation of user input'''
 	m = mock.Mock()
 	monkeypatch.setattr('builtins.input', m)
 	if 'inputs' in request.keywords:
