@@ -9,7 +9,7 @@ def mock_input(request, monkeypatch):
 	monkeypatch.setattr('builtins.input', m)
 	if 'inputs' in request.keywords:
 		# inputs = list(reversed(request.keywords['inputs'].args))
-		inputs = list(str(reversed(request.keywords['inputs'].args)))
+		# inputs = list(str(reversed(request.keywords['inputs'].args)))
 		m.side_effect = lambda x : inputs.pop()
 	return m
 
